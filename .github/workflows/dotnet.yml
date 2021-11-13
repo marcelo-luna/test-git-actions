@@ -27,7 +27,7 @@ jobs:
       run: dotnet test ${{github.workspace}}//WebApplication1//WebApplication1.csproj --no-build --verbosity normal
     - name: Publish
       run: dotnet publish ${{github.workspace}}//WebApplication1//WebApplication1.csproj -c -Release -o -dotnetcorewebapp
-    - name: 'Run Azure webapp deploy action using publish profile credentials'
+    - name: deploy to azure webapp
       uses: azure/webapps-deploy@v2
       with:
         app-name: env.AZURE_WEB_APP_NAME
